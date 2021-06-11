@@ -40,4 +40,10 @@ public class PropostaRequest {
         return new Proposta(this.codigoPessoa, this.email, this.nome, this.endereco, this.salario);
     }
 
+    public String getCodigoPessoa() {
+        return this.codigoPessoa;
+    }
+
+
+
 }
