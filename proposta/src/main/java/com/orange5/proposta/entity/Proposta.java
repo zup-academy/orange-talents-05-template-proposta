@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,6 +14,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
+import com.orange5.proposta.enums.PropostaStatus;
 import com.orange5.proposta.validator.CPForCNPJ;
 
 @Entity
@@ -35,6 +38,9 @@ public class Proposta {
     @Column(nullable = false)
     private @Positive @NotNull BigDecimal salario;
 
+    @Enumerated(EnumType.STRING)
+    private PropostaStatus status;
+
     public Proposta(@NotBlank String codigoPessoa, @NotBlank @Email String email, @NotBlank String nome,
             @NotBlank String endereco, @Positive @NotNull BigDecimal salario) {
         this.codigoPessoa = codigoPessoa;
@@ -52,5 +58,16 @@ public class Proposta {
         return this.id;
     }
 
+    public String getCodigoPessoa() {
+        return this.codigoPessoa;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public void setStatus(PropostaStatus status) {
+        this.status = status;
+    }
 
 }
