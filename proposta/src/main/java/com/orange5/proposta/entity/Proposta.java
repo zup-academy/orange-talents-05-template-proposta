@@ -70,6 +70,26 @@ public class Proposta {
         return this.nome;
     }
 
+    public String getEmail() {
+        return this.email;
+    }
+
+    public String getEndereco() {
+        return this.endereco;
+    }
+
+    public BigDecimal getSalario() {
+        return this.salario;
+    }
+
+    public PropostaStatus getStatus() {
+        return this.status;
+    }
+
+    public Card getCard() {
+        return this.card;
+    }
+
     public void setStatus(PropostaStatus status) {
         this.status = status;
     }

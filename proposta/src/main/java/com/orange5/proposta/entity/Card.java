@@ -37,4 +37,21 @@ public class Card {
     }
 
 
+    public String getId() {
+        return this.id;
+    }
+
+    public LocalDateTime getEmissao() {
+        return this.emissao;
+    }
+
+    public String getTitular() {
+        return this.titular;
+    }
+
+    public BigDecimal getLimite() {
+        return this.limite;
+    }
+
+
 }
