@@ -1,6 +1,6 @@
 package com.orange5.proposta.feign;
 
-import com.orange5.proposta.controller.AnalisarPropostaRequest;
+import com.orange5.proposta.dto.AnalisarPropostaRequest;
 import com.orange5.proposta.dto.AnalisarPropostaResponse;
 
 import org.springframework.cloud.openfeign.FeignClient;

@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
+import com.orange5.proposta.dto.AnalisarPropostaRequest;
 import com.orange5.proposta.dto.AnalisarPropostaResponse;
 import com.orange5.proposta.dto.PropostaRequest;
 import com.orange5.proposta.entity.Proposta;

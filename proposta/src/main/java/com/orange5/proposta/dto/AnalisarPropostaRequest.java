@@ -1,4 +1,4 @@
-package com.orange5.proposta.controller;
+package com.orange5.proposta.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

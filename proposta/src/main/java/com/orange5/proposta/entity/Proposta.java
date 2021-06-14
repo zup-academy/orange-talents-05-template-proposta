@@ -9,6 +9,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -41,6 +42,9 @@ public class Proposta {
     @Enumerated(EnumType.STRING)
     private PropostaStatus status;
 
+    @OneToOne
+    private Card card;
+
     public Proposta(@NotBlank String codigoPessoa, @NotBlank @Email String email, @NotBlank String nome,
             @NotBlank String endereco, @Positive @NotNull BigDecimal salario) {
         this.codigoPessoa = codigoPessoa;
@@ -68,6 +72,10 @@ public class Proposta {
 
     public void setStatus(PropostaStatus status) {
         this.status = status;
+    }
+
+    public void setCard(Card card) {
+        this.card = card;
     }
 
 }
