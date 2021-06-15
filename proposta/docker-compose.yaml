@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
 
   zookeeper:
@@ -133,6 +133,35 @@ services:
       VAULT_DEV_ROOT_TOKEN_ID: ee413645-dbe8-4848-afc6-6bb2768ada75
       VAULT_TOKEN: ee413645-dbe8-4848-afc6-6bb2768ada75
       VAULT_ADDR: http://127.0.0.1:8200
+  
+  propostas-mysql:
+    image: mysql
+    networks: 
+      - production-networks
+    environment:
+      MYSQL_ROOT_PASSWORD: 8785491
+    ports: 
+      - "3307:3306"
+
+  propostas-api:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    restart: always
+    image: leonardocosta/propostaapi
+    container_name: propostaApi
+    environment:
+      DB_HOST: "jdbc:mysql://propostas-mysql:3306/proposta?useTimezone=true&serverTimezone=UTC&createDatabaseIfNotExist=true"
+      DB_PASSWORD: 8785491  
+    ports:
+      - "8080:8080"
+    networks: 
+      - production-networks
+    depends_on: 
+      - "propostas-mysql"
+networks:
+  production-networks:
+    driver: bridge     
 
 volumes:
   grafana-volume:

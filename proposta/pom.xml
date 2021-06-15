@@ -94,6 +94,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>propostaLeo</finalName>
 	</build>
 	
 </project>
