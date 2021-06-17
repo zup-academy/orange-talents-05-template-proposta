@@ -37,7 +37,7 @@ public class BiometriaController {
             UriComponentsBuilder uriComponentsBuilder) {
         
         try {
-            Optional<Card> card = cardRepository.findByStringId(id);
+            Optional<Card> card = cardRepository.findById(id);
 
             Biometria biometria = biometriaRequest.toModel(card.get());
             manager.persist(biometria);
