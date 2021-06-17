@@ -25,6 +25,8 @@ public class Card {
     @Column(nullable = false)
     private BigDecimal limite;
 
+    private boolean isBloqueado;
+
     public Card(String id, LocalDateTime emitidoEm, String titular, BigDecimal limite) {
         this.id = id;
         this.emissao = emitidoEm;
@@ -35,7 +37,6 @@ public class Card {
     @Deprecated
     public Card() {
     }
-
 
     public String getId() {
         return this.id;
@@ -51,6 +52,14 @@ public class Card {
 
     public BigDecimal getLimite() {
         return this.limite;
+    }
+
+    public boolean getIsBloqueado() {
+        return this.isBloqueado;
+    }
+
+    public void setIsBloqueado(boolean isBloqueado) {
+        this.isBloqueado = isBloqueado;
     }
 
 

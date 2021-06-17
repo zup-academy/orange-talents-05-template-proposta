@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
-@RequestMapping("/api/biometrias")
+@RequestMapping("/api/cartoes/{id}/biometrias")
 public class BiometriaController {
 
     @Autowired
@@ -31,7 +31,7 @@ public class BiometriaController {
     @Autowired
     EntityManager manager;
 
-    @PostMapping("/{id}")
+    @PostMapping
     @Transactional
     public ResponseEntity<?> cadastrar(@PathVariable("id") String id, @RequestBody @Valid BiometriaRequest biometriaRequest,
             UriComponentsBuilder uriComponentsBuilder) {
