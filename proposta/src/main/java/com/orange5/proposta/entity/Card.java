@@ -5,8 +5,12 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+
+import com.orange5.proposta.enums.CardStatus;
 
 @Entity
 public class Card {
@@ -25,7 +29,8 @@ public class Card {
     @Column(nullable = false)
     private BigDecimal limite;
 
-    private boolean isBloqueado;
+    @Enumerated(EnumType.STRING)
+    private CardStatus cardStatus = CardStatus.SEM_BLOQUEIO;
 
     public Card(String id, LocalDateTime emitidoEm, String titular, BigDecimal limite) {
         this.id = id;
@@ -54,13 +59,16 @@ public class Card {
         return this.limite;
     }
 
+    public CardStatus getCardStatus() {
+        return this.cardStatus;
+    }
+
+    public void setCardStatus(CardStatus cardStatus) {
+        this.cardStatus = cardStatus;
+    }
+
     public boolean getIsBloqueado() {
-        return this.isBloqueado;
+        return this.cardStatus.equals(CardStatus.BLOQUEADO);
     }
-
-    public void setIsBloqueado(boolean isBloqueado) {
-        this.isBloqueado = isBloqueado;
-    }
-
 
 }
