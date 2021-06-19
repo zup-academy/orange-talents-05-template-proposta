@@ -1,4 +1,4 @@
-package com.orange5.proposta.dto;
+package com.orange5.proposta.feign.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

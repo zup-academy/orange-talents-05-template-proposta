@@ -6,12 +6,12 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
-import com.orange5.proposta.dto.CardBlockedRequest;
-import com.orange5.proposta.dto.CardBlockedResponse;
 import com.orange5.proposta.entity.Bloqueio;
 import com.orange5.proposta.entity.Card;
 import com.orange5.proposta.enums.CardStatus;
 import com.orange5.proposta.feign.CartaoResources;
+import com.orange5.proposta.feign.dto.CardBlockedRequest;
+import com.orange5.proposta.feign.dto.CardBlockedResponse;
 import com.orange5.proposta.repository.CardRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;

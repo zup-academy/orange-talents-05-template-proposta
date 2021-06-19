@@ -1,8 +1,10 @@
 package com.orange5.proposta.feign;
 
 import com.orange5.proposta.card.CardResponse;
-import com.orange5.proposta.dto.CardBlockedRequest;
-import com.orange5.proposta.dto.CardBlockedResponse;
+import com.orange5.proposta.dto.ViagemRequest;
+import com.orange5.proposta.feign.dto.CardBlockedRequest;
+import com.orange5.proposta.feign.dto.CardBlockedResponse;
+import com.orange5.proposta.feign.dto.ViagemResourceResponse;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,4 +19,7 @@ public interface CartaoResources {
 
     @PostMapping("/cartoes/{id}/bloqueios")
     CardBlockedResponse bloqueando(@PathVariable("id") String id, CardBlockedRequest cardBlockedRequest);
+
+    @PostMapping("/cartoes/{id}/avisos")
+    ViagemResourceResponse avisando(@PathVariable("id") String id, ViagemRequest viagemRequest);
 }

@@ -1,6 +1,6 @@
-package com.orange5.proposta.dto;
+package com.orange5.proposta.feign.dto;
 
-public class CardBlockedResponse {
+public class ViagemResourceResponse {
 
     private String resultado;
 
@@ -11,5 +11,4 @@ public class CardBlockedResponse {
     public void setResultado(String resultado) {
         this.resultado = resultado;
     }
-
 }
