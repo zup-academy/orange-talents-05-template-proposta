@@ -12,8 +12,8 @@ import java.lang.annotation.*;
 
 @CPF
 @CNPJ
-@Documented
-@ConstraintComposition(CompositionType.OR)
+@Documented //ao definir uma anotação, para garantir que as classes que usam sua anotação mostrem isso em seu JavaDoc gerado.
+@ConstraintComposition(CompositionType.OR) // metodo que verifica qualv
 @ReportAsSingleViolation
 @Constraint(validatedBy = {})
 @Target({ElementType.FIELD})
@@ -23,7 +23,5 @@ public @interface CpfCnpj {
     String message() default "Este CPF/CNPJ é inválido";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default { };
-    String fieldName();
-    Class<?> domainClass();
 
 }

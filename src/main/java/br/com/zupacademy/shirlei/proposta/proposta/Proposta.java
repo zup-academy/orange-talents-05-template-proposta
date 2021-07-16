@@ -12,6 +12,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 
+
+//classe de model/entidade
+
 @Entity
 public class Proposta {
 
